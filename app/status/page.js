@@ -1,17 +1,10 @@
 import Notice from "@/components/Notice";
 import { loadJson, seriesStatus, formatDate, ageDays, STATUS_LABEL } from "@/lib/data";
+import { SERIES } from "@/lib/series";
 
 export const revalidate = 900;
 
-const NAMES = {
-  selic_meta: "Selic meta",
-  ipca_12m: "IPCA 12 meses",
-  desemprego: "Desemprego (IBGE)",
-  divida_bruta: "Dívida bruta",
-  focus_ipca_2026: "Focus: IPCA 2026",
-  ptax_usd: "Dólar (PTAX)",
-  ptax_eur: "Euro (PTAX)",
-};
+const NAMES = Object.fromEntries(SERIES.map((x) => [x.key, x.label]));
 
 export default async function Status() {
   const [latest, run] = await Promise.all([loadJson("latest.json"), loadJson("status.json")]);

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Nav from "@/components/Nav";
+import Pulse from "@/components/Pulse";
 import "./globals.css";
 
 export const metadata = {
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
         <header className="top">
           <Link href="/" className="logo">Brasi<b>mundo</b></Link>
           <Nav />
+          <Pulse />
         </header>
         <main>{children}</main>
         <footer>
