@@ -1,4 +1,5 @@
 import StatesTable from "@/components/StatesTable";
+import StateMap from "@/components/StateMap";
 import { STATES, STATES_AS_OF, LEVELS, levelClass } from "@/lib/states";
 
 export const metadata = { title: "Estados · Brasimundo" };
@@ -22,6 +23,12 @@ export default function Estados() {
           </div>
         ))}
       </div>
+      <h2>Mapa de blocos</h2>
+      <StateMap />
+      <p className="src" style={{ marginTop: 10 }}>
+        Cada bloco é um estado, posicionado de forma aproximada (não é um mapa geográfico). A cor mostra o
+        nível geral de risco; a tabela abaixo traz os números.
+      </p>
       <h2>Ranking</h2>
       <StatesTable />
       <p className="src" style={{ marginTop: 14 }}>
