@@ -1,3 +1,4 @@
+import Hero from "@/components/Hero";
 import StatesTable from "@/components/StatesTable";
 import StateMap from "@/components/StateMap";
 import { STATES, STATES_AS_OF, LEVELS, levelClass } from "@/lib/states";
@@ -8,12 +9,10 @@ export default function Estados() {
   const count = (l) => STATES.filter((s) => s.overall === l).length;
   return (
     <>
-      <div className="eyebrow">Brasil em dados · gestão de risco</div>
-      <h1>Risco por estado</h1>
-      <p className="lead">
+      <Hero variant={2} eyebrow={<>Brasil em dados · gestão de risco</>} title={<>Risco por estado</>} lead={<>
         Os 27 estados na mesma régua para desemprego, informalidade e violência. O nível geral é o
         maior dos três, porque uma média esconderia o problema mais grave.
-      </p>
+      </>} />
       <div className="pill-row">
         {[...LEVELS].reverse().map((l) => (
           <div className="box stat" key={l}>
@@ -34,7 +33,7 @@ export default function Estados() {
       <p className="src" style={{ marginTop: 14 }}>
         Desemprego e informalidade: IBGE, PNAD Contínua, 2º trimestre de 2026. Mortes violentas por
         100 mil habitantes: Anuário Brasileiro de Segurança Pública 2026 (dados de 2025). Valores e
-        níveis transcritos à mão do site Brasimundo em {STATES_AS_OF}; ainda não são coletados
+        níveis transcritos à mão do site <span className="notranslate" translate="no">Brasimundo</span> em {STATES_AS_OF}; ainda não são coletados
         automaticamente.
       </p>
     </>

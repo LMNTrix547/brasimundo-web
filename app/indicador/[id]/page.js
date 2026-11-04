@@ -1,3 +1,4 @@
+import Hero from "@/components/Hero";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Sparkline from "@/components/Sparkline";
@@ -30,9 +31,7 @@ export default async function Indicador({ params }) {
   return (
     <>
       <p><Link href="/">← Terminal</Link></p>
-      <div className="eyebrow">Indicador · origem e histórico</div>
-      <h1>{meta.label}</h1>
-      <p className="lead">{meta.detail}</p>
+      <Hero variant={2} eyebrow={<>Indicador · origem e histórico</>} title={<>{meta.label}</>} lead={<>{meta.detail}</>} />
 
       {!latest.ok && <Notice>Não foi possível carregar os dados ({latest.reason}).</Notice>}
 

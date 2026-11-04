@@ -1,3 +1,4 @@
+import Hero from "@/components/Hero";
 import { EVENTS, CALENDAR_AS_OF } from "@/lib/calendar";
 
 export const metadata = { title: "Calendário econômico · Brasimundo" };
@@ -11,12 +12,10 @@ export default function Calendario() {
   const next = upcoming[0];
   return (
     <>
-      <div className="eyebrow">Mercados · agenda</div>
-      <h1>Calendário econômico</h1>
-      <p className="lead">
+      <Hero variant={1} eyebrow={<>Mercados · agenda</>} title={<>Calendário econômico</>} lead={<>
         Decisões e divulgações que movem juros, câmbio, bolsa e consumo até o fim de 2026. Só entram
         datas confirmadas em calendários oficiais ou comunicados.
-      </p>
+      </>} />
 
       {next ? (
         <div className="box" style={{ marginTop: 20 }}>
@@ -25,7 +24,7 @@ export default function Calendario() {
           <div>{next.title}</div>
           <div className="meta">
             <span className="tag tag-ok">{daysUntil(next.date) === 0 ? "hoje" : `em ${daysUntil(next.date)} ${daysUntil(next.date) === 1 ? "dia" : "dias"}`}</span>
-            <span className="src">{next.source}</span>
+            <span className="src notranslate" translate="no">{next.source}</span>
           </div>
         </div>
       ) : (
@@ -42,7 +41,7 @@ export default function Calendario() {
                 <td className="mono">{fmt(e.date)}</td>
                 <td><span className="tag">{e.theme}</span></td>
                 <td>{e.title}</td>
-                <td className="src">{e.source}</td>
+                <td className="src notranslate" translate="no">{e.source}</td>
               </tr>
             ))}
           </tbody>

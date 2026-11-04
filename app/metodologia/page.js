@@ -1,3 +1,4 @@
+import Hero from "@/components/Hero";
 export const metadata = { title: "Metodologia · Brasimundo" };
 
 const LEVELS = [
@@ -11,12 +12,10 @@ const LEVELS = [
 export default function Metodologia() {
   return (
     <>
-      <div className="eyebrow">Como funciona</div>
-      <h1>Metodologia</h1>
-      <p className="lead">
+      <Hero variant={1} eyebrow={<>Como funciona</>} title={<>Metodologia</>} lead={<>
         Cada número tem fonte, data, nível de verificação e situação. Quando os dados não bastam,
         dizemos isso.
-      </p>
+      </>} />
 
       <h2>Níveis de verificação</h2>
       <div className="scroll">

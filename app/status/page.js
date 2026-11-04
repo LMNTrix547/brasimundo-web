@@ -1,3 +1,4 @@
+import Hero from "@/components/Hero";
 import Notice from "@/components/Notice";
 import { loadJson, seriesStatus, formatDate, ageDays, STATUS_LABEL } from "@/lib/data";
 import { SERIES } from "@/lib/series";
@@ -11,12 +12,10 @@ export default async function Status() {
 
   return (
     <>
-      <div className="eyebrow">Transparência</div>
-      <h1>Status dos dados</h1>
-      <p className="lead">
+      <Hero variant={0} eyebrow={<>Transparência</>} title={<>Status dos dados</>} lead={<>
         Cada fonte mostra se a última coleta funcionou, qual é a data do dado e se ele pode ser
         usado como atual.
-      </p>
+      </>} />
 
       {(!latest.ok || !run.ok) && (
         <Notice>

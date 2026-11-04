@@ -1,3 +1,4 @@
+import Hero from "@/components/Hero";
 import Indicator from "@/components/Indicator";
 import Notice from "@/components/Notice";
 import { loadJson, loadHistory, seriesStatus, formatValue, formatDate } from "@/lib/data";
@@ -16,12 +17,10 @@ export default async function Terminal() {
 
   return (
     <>
-      <div className="eyebrow">Mercados · ao vivo</div>
-      <h1>Terminal</h1>
-      <p className="lead">
+      <Hero variant={0} eyebrow={<>Mercados · ao vivo</>} title={<>Terminal</>} lead={<>
         Indicadores oficiais com fonte, data e nível de verificação. Atualizados em dias úteis.
         Clique em um número para ver a origem e o histórico.
-      </p>
+      </>} />
 
       {!res.ok && (
         <Notice>

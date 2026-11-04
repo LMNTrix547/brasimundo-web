@@ -37,5 +37,7 @@ The site re-reads the data every 15 minutes, so new collections appear without a
 Manual values live in `lib/manual.js`. Update them there when you update the numbers.
 
 ## Not built yet
+
+- English version (the site is in Portuguese for now).
 - Ibovespa (needs a B3 licence) and the trade surplus (needs an open feed) are still manual.
 - Economic calendar, risk tracker, state explorer, price engine and calculators from the original site.
